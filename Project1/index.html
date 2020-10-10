@@ -1,0 +1,80 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="tyylit.css">
+
+
+    <script>
+
+        var p = document.getElementsByTagName('p');
+        p[0].style.display = "none";
+
+        function motivated() {
+            var quotes = [
+                "The resistance that you fight physically in the gym and the resistance that you fight in life can only build a strong character",
+                "The best activities for your health are pumping and humping",
+                "There are no shortcuts—everything is reps, reps, reps.",
+                "When I was 15-years-old, I took off my clothes and looked in the mirror. When I stared at myself naked, I realized that to be perfectly proportioned I would need twenty-inch arms to match the rest of me",
+                "Stop whining.",
+                "My instinct was to win, eliminate anyone who is in competition, destroy my enemy, and move on without any kind of hesitation at all.",
+                "Positive thinking can be contagious. Being surrounded by winners helps you develop into a winner."
+            ];
+
+            var luku = Math.round(Math.random() * 5);
+            document.getElementsByTagName('h5')[0].innerHTML = quotes[luku];
+        }
+
+
+    </script>
+</head>
+
+<body>
+
+    <h1>
+        GET FIT WITH ARNOLD
+    </h1>
+    <img src="http://i.pinimg.com/originals/d5/c9/c1/d5c9c18f3c3cfe1222b14dce054e5509.jpg" width="435" height="606"
+        alt="" />
+    <h3>Motivational quote of the day</h3>
+
+    <button onclick="motivated()">Get motivated</button>
+
+    <h5></h5>
+
+    <h3 id=fitness>Arnold´s fitness tips</h3>
+
+    <form id="valinta" name="valinta" method="post" action="">
+        <select name="vetovalikko" size="3">
+            <option>Chest</option>
+            <option>Back</option>
+            <option>Legs</option>
+            <option>Calves</option>
+            <option>Forearms</option>
+            <option>Abs</option>
+            <option>Biceps</option>
+        </select>
+    </form>
+
+    <p> Bench press – 5 sets, 6-10 reps<br>
+        Flat bench flies – 5 sets, 6-10 reps<br>
+        Incline bench press – 6 sets, 6-10 reps<br>
+        Cable crossovers – 6 sets, 10-12 reps<br>
+        Dips – 5 sets, to failure<br>
+        Dumbbell pullovers – 5 sets, 10-12 reps
+    </p>
+
+    <p>Front wide-grip chin-ups – 6 sets, to failure <br>
+        T-bar rows – 5 sets, 6-10 reps<br>
+        Seated pulley rows – 6 sets, 6-10 reps<br>
+        One-arm dumbbell rows – 5 sets, 6-10 reps<br>
+        Straight-leg deadlifts – 6 sets, 15 reps</p>
+
+
+    <div id="footer">
+        <p>
+        </p>
+    </div>
+</body>
+
+</html>
