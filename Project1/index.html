@@ -7,9 +7,6 @@
 
     <script>
 
-        var p = document.getElementsByTagName('p');
-        p[0].style.display = "none";
-
         function motivated() {
             var quotes = [
                 "The resistance that you fight physically in the gym and the resistance that you fight in life can only build a strong character",
@@ -25,6 +22,18 @@
             document.getElementsByTagName('h5')[0].innerHTML = quotes[luku];
         }
 
+        function treeni() {
+
+            var valinnat = document.forms["0"]["valinta"].value;
+            var p = document.createElement("P");
+
+            p = document.getElementById(valinnat);
+
+            document.body.appendChild(p);
+            document.getElementById("treeniTahan").appendChild(p);
+            p.style.visibility = "visible";
+
+        }
 
     </script>
 </head>
@@ -34,18 +43,20 @@
     <h1>
         GET FIT WITH ARNOLD
     </h1>
-    <img src="http://i.pinimg.com/originals/d5/c9/c1/d5c9c18f3c3cfe1222b14dce054e5509.jpg" width="435" height="606"
-        alt="" />
-    <h3>Motivational quote of the day</h3>
+    <img id="arska" src="http://i.pinimg.com/originals/d5/c9/c1/d5c9c18f3c3cfe1222b14dce054e5509.jpg" width="435"
+        height="606" alt="" />
+    <div id="moti">
+        <h3>Motivational quote of the day</h3>
 
-    <button onclick="motivated()">Get motivated</button>
+        <button onclick="motivated()">Get motivated</button>
+    </div>
 
     <h5></h5>
 
-    <h3 id=fitness>Arnold´s fitness tips</h3>
+    <h3 id=fitness>Arnold´s fitness routine</h3>
 
-    <form id="valinta" name="valinta" method="post" action="">
-        <select name="vetovalikko" size="3">
+    <form name="valinta" method="post" action="">
+        <select name="vetovalikko" id="valinta" size="1" onchange="treeni()">
             <option>Chest</option>
             <option>Back</option>
             <option>Legs</option>
@@ -56,7 +67,83 @@
         </select>
     </form>
 
-    <p> Bench press – 5 sets, 6-10 reps<br>
+    <p id=treeniTahan></p>
+
+    <div>
+        <table id="taulukko" class="display" cellspacing="0" width="50%">
+            <thead>
+                <tr>
+                    <th id="border"></th>
+                    <th>Ma</th>
+                    <th>Ti</th>
+                    <th>Ke</th>
+                    <th>To</th>
+                    <th>Pe</th>
+                    <th>La</th>
+                    <th>Su</th>
+                </tr>
+            </thead>
+            <tfoot>
+            </tfoot>
+            <tbody>
+                <tr>
+                    <td>Biking</td>
+                    <td>Aika</td>
+                    <td>Aika</td>
+                    <td>Aika</td>
+                    <td>Aika</td>
+                    <td>Aika</td>
+                    <td>Aika</td>
+                    <td>Aika</td>
+                </tr>
+                <tr>
+                    <td>Running</td>
+                    <td>Aika</td>
+                    <td>Aika</td>
+                    <td>Aika</td>
+                    <td>Aika</td>
+                    <td>Aika</td>
+                    <td>Aika</td>
+                    <td>Aika</td>
+                </tr>
+                <tr>
+                    <td>Swimming</td>
+                    <td>Aika</td>
+                    <td>Aika</td>
+                    <td>Aika</td>
+                    <td>Aika</td>
+                    <td>Aika</td>
+                    <td>Aika</td>
+                    <td>Aika</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p>
+            Laji
+            <label for="laji">:</label>
+            <input type="text" name="laji" id="laji">
+            <br>
+            Position:
+            <input type="text" name="textfield2" id="textfield2">
+            <br>
+            Salary:
+            <input type="text" name="textfield3" id="textfield3">
+            <br>
+            <input type="button" onclick="insertRows()" name="Insert" id="Insert" value="Insert">
+        </p>
+
+    </div>
+
+
+    <div id="footer">
+        <p>
+        </p>
+    </div>
+
+    <p id=Chest>
+        <b>Chest</b><br>
+        Bench press – 5 sets, 6-10 reps<br>
         Flat bench flies – 5 sets, 6-10 reps<br>
         Incline bench press – 6 sets, 6-10 reps<br>
         Cable crossovers – 6 sets, 10-12 reps<br>
@@ -64,17 +151,14 @@
         Dumbbell pullovers – 5 sets, 10-12 reps
     </p>
 
-    <p>Front wide-grip chin-ups – 6 sets, to failure <br>
+    <p id=Back>
+        <b>Back</b><br>
+        Front wide-grip chin-ups – 6 sets, to failure<br>
         T-bar rows – 5 sets, 6-10 reps<br>
         Seated pulley rows – 6 sets, 6-10 reps<br>
         One-arm dumbbell rows – 5 sets, 6-10 reps<br>
-        Straight-leg deadlifts – 6 sets, 15 reps</p>
-
-
-    <div id="footer">
-        <p>
-        </p>
-    </div>
+        Straight-leg deadlifts – 6 sets, 15 reps
+    </p>
 </body>
 
 </html>

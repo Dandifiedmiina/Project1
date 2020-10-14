@@ -1,0 +1,50 @@
+#valinta {
+  width: 30%;
+  padding: 10px;
+  margin: 10px;
+}
+
+select {
+  width: 30%;
+  padding: 2px;
+  border-radius: 10px;
+}
+
+p {
+  visibility: hidden;
+}
+
+h1 {
+  text-align: center;
+}
+
+#arska {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#moti {
+  text-align: center;
+}
+
+td {
+  border: 1px solid black;
+}
+
+th {
+  border: 2px solid grey;
+}
+
+#lajit {
+  width: 30%;
+}
+
+#border {
+  border: none;
+}
+
+#taulukko {
+  text-align: center;
+  margin-left: 30%;
+}
