@@ -7,6 +7,10 @@
 
     <script>
 
+        var h = document.createElement("b");
+        var t = document.createTextNode("* Please add a new hobby");
+        h.appendChild(t);
+
         function motivated() {
             var quotes = [
                 "The resistance that you fight physically in the gym and the resistance that you fight in life can only build a strong character",
@@ -35,6 +39,40 @@
 
         }
 
+        function calculate() {
+
+            var sum = 0;
+            for (i = 0; i < document.getElementsByName('time').length; i++) {
+                var t = document.getElementsByName('time')[i].value
+                var tFloat = parseFloat(t);
+                sum = sum + tFloat;
+            }
+
+            document.getElementById("total").value = sum;
+        }
+
+        function lisaaLaji() {
+
+            if (document.getElementById('laji').value == "") {
+                document.getElementById('laji').style.border = "thick solid red";
+                document.getElementById('error').appendChild(h);
+            }
+
+            var table = document.getElementById("taulukko");
+            var i = table.length;
+            var tr = table.insertRow(i);
+            var td1 = tr.insertCell(0);
+            var td2 = tr.insertCell(1);
+            var td3 = tr.insertCell(2);
+            var td4 = tr.insertCell(3);
+            var td5 = tr.insertCell(4);
+            var td6 = tr.insertCell(5);
+            var td7 = tr.insertCell(6);
+
+            tr.innerHTML = document.getElementById('laji').value;
+            td1.innerHTML = "0,00";
+        }
+
     </script>
 </head>
 
@@ -51,29 +89,12 @@
         <button onclick="motivated()">Get motivated</button>
     </div>
 
-    <h5></h5>
-
-    <h3 id=fitness>Arnold´s fitness routine</h3>
-
-    <form name="valinta" method="post" action="">
-        <select name="vetovalikko" id="valinta" size="1" onchange="treeni()">
-            <option>Chest</option>
-            <option>Back</option>
-            <option>Legs</option>
-            <option>Calves</option>
-            <option>Forearms</option>
-            <option>Abs</option>
-            <option>Biceps</option>
-        </select>
-    </form>
-
-    <p id=treeniTahan></p>
-
+    <h5 id="moti"></h5>
     <div>
         <table id="taulukko" class="display" cellspacing="0" width="50%">
             <thead>
                 <tr>
-                    <th id="border"></th>
+                    <th id="cellHidden"></th>
                     <th>Ma</th>
                     <th>Ti</th>
                     <th>Ke</th>
@@ -87,59 +108,80 @@
             </tfoot>
             <tbody>
                 <tr>
-                    <td>Biking</td>
-                    <td>Aika</td>
-                    <td>Aika</td>
-                    <td>Aika</td>
-                    <td>Aika</td>
-                    <td>Aika</td>
-                    <td>Aika</td>
-                    <td>Aika</td>
+                    <th>Biking</th>
+                    <td><input type="number" name="time" id="time" value=0.00 required></td>
+                    <td><input type="number" name="time" id="time" value="0.00" required></td>
+                    <td><input type="number" name="time" id="time" value="0.00" required></td>
+                    <td><input type="number" name="time" id="time" value="0.00" required></td>
+                    <td><input type="number" name="time" id="time" value="0.00" required></td>
+                    <td><input type="number" name="time" id="time" value="0.00" required></td>
+                    <td><input type="number" name="time" id="time" value="0.00" required></td>
                 </tr>
                 <tr>
-                    <td>Running</td>
-                    <td>Aika</td>
-                    <td>Aika</td>
-                    <td>Aika</td>
-                    <td>Aika</td>
-                    <td>Aika</td>
-                    <td>Aika</td>
-                    <td>Aika</td>
+                    <th>Running</th>
+                    <td><input type="number" name="time" id="time" value="0.00" required></td>
+                    <td><input type="number" name="time" id="time" value="0.00" required></td>
+                    <td><input type="number" name="time" id="time" value="0.00" required></td>
+                    <td><input type="number" name="time" id="time" value="0.00" required></td>
+                    <td><input type="number" name="time" id="time" value="0.00" required></td>
+                    <td><input type="number" name="time" id="time" value="0.00" required></td>
+                    <td><input type="number" name="time" id="time" value="0.00" required></td>
+
                 </tr>
                 <tr>
-                    <td>Swimming</td>
-                    <td>Aika</td>
-                    <td>Aika</td>
-                    <td>Aika</td>
-                    <td>Aika</td>
-                    <td>Aika</td>
-                    <td>Aika</td>
-                    <td>Aika</td>
+                    <th>Swimming</th>
+                    <td><input type="number" name="time" id="time" value="0.00" required></td>
+                    <td><input type="number" name="time" id="time" value="0.00" required></td>
+                    <td><input type="number" name="time" id="time" value="0.00" required></td>
+                    <td><input type="number" name="time" id="time" value="0.00" required></td>
+                    <td><input type="number" name="time" id="time" value="0.00" required></td>
+                    <td><input type="number" name="time" id="time" value="0.00" required></td>
+                    <td><input type="number" name="time" id="time" value="0.00" required></td>
                 </tr>
             </tbody>
         </table>
-
-        <p>
-            Laji
-            <label for="laji">:</label>
-            <input type="text" name="laji" id="laji">
-            <br>
-            Position:
-            <input type="text" name="textfield2" id="textfield2">
-            <br>
-            Salary:
-            <input type="text" name="textfield3" id="textfield3">
-            <br>
-            <input type="button" onclick="insertRows()" name="Insert" id="Insert" value="Insert">
-        </p>
-
     </div>
+
+    <div id='summa'>
+        Count the sum of excercise in a week: <br>
+        <label for="summa"></label>
+        <td><input type="text" name="sum" id='total' disabled></td>
+        <br>
+        <input type="button" onclick="calculate()" name="Total" value="Total">
+    </div>
+
+
+
+    <p>
+        Insert a new hobby: <br>
+        <label for="laji"></label>
+        <input type="text" name="laji" id="laji">
+        <span id="error"></span>
+        <br>
+        <input type="button" onclick="lisaaLaji()" name="Insert" id="Insert" value="Insert">
+    </p>
 
 
     <div id="footer">
         <p>
         </p>
     </div>
+
+    <h3 id=fitness>Arnold´s fitness routine</h3>
+
+    <form name=" valinta" method="post" action="">
+        <select name="vetovalikko" id="valinta" size="1" onchange="treeni()">
+            <option>Chest</option>
+            <option>Back</option>
+            <option>Legs</option>
+            <option>Calves</option>
+            <option>Forearms</option>
+            <option>Abs</option>
+            <option>Biceps</option>
+        </select>
+    </form>
+
+    <p id=treeniTahan></p>
 
     <p id=Chest>
         <b>Chest</b><br>

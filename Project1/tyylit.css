@@ -2,6 +2,7 @@
   width: 30%;
   padding: 10px;
   margin: 10px;
+  visibility: hidden;
 }
 
 select {
@@ -10,7 +11,7 @@ select {
   border-radius: 10px;
 }
 
-p {
+#fitness {
   visibility: hidden;
 }
 
@@ -24,27 +25,38 @@ h1 {
   margin-right: auto;
 }
 
-#moti {
-  text-align: center;
-}
-
-td {
+td,
+table {
   border: 1px solid black;
 }
 
 th {
   border: 2px solid grey;
+  background-color: lightslategrey;
+}
+
+#cellHidden {
+  border-color: white;
+  background-color: white;
+}
+
+input {
+  text-align: center;
+  width: 80px;
+}
+
+#summa {
+}
+
+#taulukko {
+  text-align: center;
+  margin-left: 25%;
 }
 
 #lajit {
   width: 30%;
 }
 
-#border {
-  border: none;
-}
-
-#taulukko {
+#moti {
   text-align: center;
-  margin-left: 30%;
 }
