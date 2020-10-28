@@ -49,7 +49,7 @@ function sumHobby() {
     document.getElementById("added").value = sum;
 }
 
-//toistetaan ylempi alla olevissa. Päivien määrä muuttuu edeltävän loputtua
+//toistetaan ylempi alla olevissa. Päivien määrä muuttuu edeltävän loputtua'
 function sumHobby2() {
     var sum = 0;
     document.getElementById("added2").style.visibility = "visible";
