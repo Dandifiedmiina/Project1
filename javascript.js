@@ -1,6 +1,10 @@
+//tehty alkuun  virheilmoitusten  muuttujat, mikäli tarvetta useampaan funktioon
+
 var h = document.createElement("b");
 var t = document.createTextNode("* Please add a new hobby");
 h.appendChild(t);
+
+//motivaatio quotet ja randomizer.
 
 function motivated() {
     var quotes = [
@@ -20,6 +24,7 @@ function motivated() {
 
 function calculate() {
 
+    //lasketaan harrastusten yhteismäärä
     var sum = 0;
     for (i = 0; i < document.getElementsByName('time').length; i++) {
         var t = document.getElementsByName('time')[i].value
@@ -30,10 +35,13 @@ function calculate() {
     document.getElementById("total").value = sum;
 }
 
+
+//lasketaan harrastusten määrä per harrastus
 function sumHobby() {
     var sum = 0;
     document.getElementById("added").style.visibility = "visible";
     for (i = 0; i < 7; i++) {
+        //otetaan muuttujassa huomioon päivien määrä (alle 7)
         var t = document.getElementsByName('time')[i].value
         var tFloat = parseFloat(t);
         sum = sum + tFloat;
@@ -41,6 +49,7 @@ function sumHobby() {
     document.getElementById("added").value = sum;
 }
 
+//toistetaan ylempi alla olevissa. Päivien määrä muuttuu edeltävän loputtua
 function sumHobby2() {
     var sum = 0;
     document.getElementById("added2").style.visibility = "visible";
@@ -73,6 +82,7 @@ function sumHobby4() {
     document.getElementById("added4").value = sum;
 }
 
+//Mahdollisuus vaihtaa harrastus
 function changeHobby() {
     var ch = document.getElementById("type"); 
     var change = ch.options[ch.selectedIndex].value;
