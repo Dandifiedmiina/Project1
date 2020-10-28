@@ -41,7 +41,7 @@
             </tfoot>
             <tbody>
                 <tr>
-                    <th>Biking</th>
+                    <th id="biking">Biking</th>
                     <td><input type="number" name="time" id="time" value=0.00 onblur="sumHobby()" required></td>
                     <td><input type="number" name="time" id="time" value=0.00 onblur="sumHobby()" required></td>
                     <td><input type="number" name="time" id="time" value=0.00 onblur="sumHobby()" required></td>
@@ -52,7 +52,7 @@
                     <th><input type="number" name="added" id="added" value="0.00" disabled></th>
                 </tr>
                 <tr>
-                    <th>Running</th>
+                    <th id="running">Running</th>
                     <td><input type="number" name="time" id="time" value="0.00" onblur="sumHobby2()" required></td>
                     <td><input type="number" name="time" id="time" value="0.00" onblur="sumHobby2()" required></td>
                     <td><input type="number" name="time" id="time" value="0.00" onblur="sumHobby2()" required></td>
@@ -75,7 +75,7 @@
                     <th><input type="number" name="added3" id="added3" value="0.00" disabled></th>
                 </tr>
                 <tr>
-                    <th>Climbing</th>
+                    <th id="climbing">Climbing</th>
                     <td><input type="number" name="time" id="time" value="0.00" onblur="sumHobby4()" required></td>
                     <td><input type="number" name="time" id="time" value="0.00" onblur="sumHobby4()" required></td>
                     <td><input type="number" name="time" id="time" value="0.00" onblur="sumHobby4()" required></td>
@@ -107,13 +107,14 @@
                 <input type="text" name="hobby" id="hobby">
                 <span id="error"></span>
             <form id="dropdown" name="dropdown" method="post" action="">
-                <select name="hobbies" size="4" onchange="changeHobby">
+                <select name="hobbies" size="4" id="type">
                     <option value="biking">Biking</option>
                     <option value="running">Running</option>
                     <option value="swimming">Swimming</option>
                     <option value="climbing">Climbing</option>
                 </select>
             </form>
+            <input type="button" onclick="changeHobby()" name="change" value="change">
             </p>
         </div>
     </div>

@@ -74,14 +74,25 @@ function sumHobby4() {
 }
 
 function changeHobby() {
-    var change =document.getElementById("dropdown"); 
+    var ch = document.getElementById("type"); 
+    var change = ch.options[ch.selectedIndex].value;
 
-    if(document.getElementById("hobby").value="") {
-        
+    if(document.getElementById('hobby').value == "") {
+        document.getElementById('error').appendChild(h);
+        document.getElementById('hobby').style.borderColor="red";
+        return false;
     } 
-
-    if(change="swimming") {     
+    if(change =="biking") {     
+        document.getElementById("biking").innerHTML = document.getElementById("hobby").value;
+    }    
+    else if(change =="running") {     
+        document.getElementById("running").innerHTML = document.getElementById("hobby").value;
+    }
+    else if(change =="swimming") {     
         document.getElementById("swimming").innerHTML = document.getElementById("hobby").value;
+    }
+    else if(change =="climbing") {     
+        document.getElementById("climbing").innerHTML = document.getElementById("hobby").value;
     }
 
 }
