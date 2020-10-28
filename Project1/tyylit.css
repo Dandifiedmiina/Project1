@@ -1,21 +1,5 @@
-#valinta {
-  width: 30%;
-  padding: 10px;
-  margin: 10px;
-  visibility: hidden;
-}
-
-select {
-  width: 30%;
-  padding: 2px;
-  border-radius: 10px;
-}
-
-#fitness {
-  visibility: hidden;
-}
-
-h1 {
+h1,
+#moti {
   text-align: center;
 }
 
@@ -45,18 +29,31 @@ input {
   width: 80px;
 }
 
-#summa {
+#added,
+#added2,
+#added3,
+#added4 {
+  background-color: lightgray;
+  border-color: black;
+  visibility: hidden;
 }
 
 #taulukko {
   text-align: center;
-  margin-left: 25%;
+  margin-left: 5%;
 }
 
-#lajit {
-  width: 30%;
+#base {
+  width: 70%;
 }
 
-#moti {
-  text-align: center;
+#first {
+  float: left;
+  margin-left: 15%;
+  margin-top: 10px;
+}
+#second {
+  float: right;
+  margin-right: 15%;
+  margin-top: 10px;
 }
