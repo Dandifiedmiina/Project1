@@ -1,3 +1,6 @@
+document.cookie ="expiress=  Sat,  31 Dec  2021 12:00:00 UTC";
+
+
 //tehty alkuun  virheilmoitusten  muuttujat, mikäli tarvetta useampaan funktioon
 
 var h = document.createElement("b");
@@ -91,8 +94,11 @@ function changeHobby() {
         document.getElementById('error').appendChild(h);
         document.getElementById('hobby').style.borderColor="red";
         return false;
-    } 
-    if(change =="biking") {     
+    } if (document.dropdown.hobbies.selectedIndex == 0) {
+        alert("Choose a hobby to change!");
+        return false;
+    }
+    else if(change =="biking") {     
         document.getElementById("biking").innerHTML = document.getElementById("hobby").value;
     }    
     else if(change =="running") {     
